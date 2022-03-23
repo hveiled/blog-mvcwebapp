@@ -44,7 +44,8 @@ public class BlogController {
 		int limit = 20;
 		String fullTitle = post.getTitle();
 		String subStr = fullTitle.length() > limit ? fullTitle.substring(0, limit) : fullTitle;
-//		model.addAttribute("views", )
+		int views = post.getViews();
+		post.setViews(++views);
 		model.addAttribute("title", subStr);
 		model.addAttribute("post", post);
 		return "post-details";
