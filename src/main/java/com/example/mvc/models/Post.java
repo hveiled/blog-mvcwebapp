@@ -15,7 +15,10 @@ public class Post {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
-	private String title, announce, full_text;
+	private String title, announce;
+
+	@Column(columnDefinition="TEXT")
+	private String full_text;
 
 	@Column(columnDefinition = "integer default 0")
 	private int views;
